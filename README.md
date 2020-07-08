@@ -1,0 +1,2 @@
+# HCFClasses
+Premium HCFClasses plugin.
