@@ -1,0 +1,324 @@
+############################################################
+# +------------------------------------------------------+ #
+# |                                                      | #
+# |            HCFClasses Plugin Configuration           | #
+# |                  Made By Benzimmer                   | #
+# |                                                      | #
+# +------------------------------------------------------+ #
+############################################################
+
+TASK_DELAY: 1 # in seconds
+
+USE_NEW_TIMEFORMAT: false # Set this to true for time formats to be hh,mm,ss.
+
+######################
+# Scoreboard Section #
+######################
+
+SCOREBOARD:
+  SCOREBOARD_TITLE: '&a&lClasses'
+  USE_SCOREBOARD: true
+  
+  SCOREBOARD_LINES:
+  - '&8&m-------------'
+  - ' '
+  - '&6&lClass name:'
+  - '%classname%'
+  - ' '
+  - '&6&lElapsed Time:'
+  - '%time%'
+  
+  BARD_ENERGY: # These lines will be added when bard is activated
+    ENABLED: true
+    LINES:
+    - ' '
+    - '&6&lEnergy Remaining:'
+    - '%energy%'
+    
+  SCOREBOARD_FOOTER: # These lines will be added at the bottom of the bard and classes scoreboard
+    ENABLED: true
+    LINES:
+    - ' '
+    - '&8&m-------------' 
+    
+FEATHERBOARD_TRIGGER: # Scoreboard must be disabled in order for this feature to work
+
+  CLASS_SCOREBOARD: 
+    ENABLED: false 
+    NAME: 'hcfclasses'
+  
+  BARD_SCOREBOARD:
+    ENABLED: false
+    NAME: 'bard'
+    
+#######################
+# Potion Effect Names #
+#######################
+    
+EFFECT_NAMES:
+  SPEED: "Speed"
+  SLOW: "Slowness"
+  FAST_DIGGING: "Haste"
+  INCREASE_DAMAGE: "Strength"
+  CONFUSION: "Confusion"
+  JUMP: "Jump Boost"
+  REGENERATION: "Regeneration"
+  DAMAGE_RESISTANCE: "Resistance"
+  FIRE_RESISTANCE: "Fire Resistance"
+  WATER_BREATHING: "Water Breathing"
+  INVISIBILITY: "Invisibiltiy"
+  BLINDNESS: "Blindness"
+  NIGHT_VISION: "Night Vision"
+  HUNGER: "Hunger"
+  WEAKNESS: "Weakness"
+  POISON: "Poison"
+  WITHER: "Wither"
+  HEALTH_BOOST: "Health Boost"
+  ABSORPTION: "Absorption"
+  SATURATION": "Saturation"
+  HEAL: "Heal"
+  HARM: "Harm"
+  SLOW_DIGGING: "Mining Fatigue"
+    
+###################
+# Default Classes #
+###################
+
+ARCHER:
+  ENABLED: true
+  
+  ARMOR:
+    BOOTS: LEATHER_BOOTS
+    LEGGINGS: LEATHER_LEGGINGS
+    CHESTPLATE: LEATHER_CHESTPLATE
+    HELMET: LEATHER_HELMET
+  
+  LONG_RANGE_DAMAGE_MULTIPLER: 2
+  LONG_RANGE_DISTANCE: 25
+  DEFAULT_DAMAGE_MULTIPLER: 1.5
+  
+  DISABLE_ARCHER_TAGS: true # Disable being able to critical other archers
+  
+  SPEED_BOOST:
+    ENABLED: true
+    AMPLIFIER: 4
+    DURATION: 15
+    COOLDOWN: 30
+
+  JUMP_BOOST:
+    ENABLED: true
+    AMPLIFIER: 2
+    DURATION: 15
+    COOLDOWN: 30
+    
+  EFFECTS: # Set the effect name and amplifiers here
+    SPEED: 5 
+    JUMP: 1
+  
+BARD:
+  ENABLED: true
+  
+  SEND_HELD_MESSAGES: false # Set this to true to display held item messages
+  
+  ARMOR:
+    BOOTS: DIAMOND_BOOTS
+    LEGGINGS: DIAMOND_LEGGINGS
+    CHESTPLATE: DIAMOND_CHESTPLATE
+    HELMET: DIAMOND_HELMET
+  
+  CLICKED_ITEM_DISTANCE: 30.0
+  HELD_ITEM_DISTANCE: 5.0
+  ENERGY_PER_TASK: 2
+  MAX_ENERGY: 120
+  INCLUDE_BARD_IN_EFFECTS: true # Set this to false if you dont want Bard to receive effects
+  
+  DISABLE_IN_TOWNS: true # If you are using towny and dont want to allow Bards in claims
+  
+  ANNOUNCE_ENERGY: # List the energy amounts to send a message at
+  - 10
+  - 20
+  - 30
+  - 50
+  - 100
+  
+  DISABLE_IN_REGIONS: # Use /classes wand and /classes createregion <name> to list them here
+  - exampleregion
+  
+  DISABLE_IN_WORLDS:
+  - exampleworld
+  
+  ITEMS:
+  
+    SPEED:
+      TYPE: SUGAR
+      CLICKED: 
+        AMPLIFIER: 1
+        ENABLED: true
+        ENERGY: 30
+        COOLDOWN: 10
+      HELD:
+        AMPLIFIER: 0
+        ENABLED: true
+        ENERGY: 5
+        
+    INCREASE_DAMAGE:
+      TYPE: BLAZE_POWDER
+      CLICKED: 
+        AMPLIFIER: 1
+        ENABLED: true
+        ENERGY: 50
+        COOLDOWN: 10
+      HELD:
+        AMPLIFIER: 0
+        ENABLED: false
+        ENERGY: 5
+        
+    DAMAGE_RESISTANCE:
+      TYPE: IRON_INGOT
+      CLICKED: 
+        AMPLIFIER: 1 
+        ENABLED: true
+        ENERGY: 35
+        COOLDOWN: 10
+      HELD:
+        AMPLIFIER: 0
+        ENABLED: true
+        ENERGY: 5
+        
+    JUMP:
+      TYPE: FEATHER
+      CLICKED: 
+        AMPLIFIER: 1
+        ENABLED: true
+        ENERGY: 40
+        COOLDOWN: 10
+      HELD:
+        AMPLIFIER: 0
+        ENABLED: true
+        ENERGY: 5
+        
+    WITHER:
+      TYPE: SPIDER_EYE
+      CLICKED: 
+        AMPLIFIER: 1
+        ENABLED: true
+        ENERGY: 40
+        COOLDOWN: 10
+      HELD:
+        AMPLIFIER: 0
+        ENABLED: false
+        ENERGY: 5
+        
+    REGENERATION:
+      TYPE: GHAST_TEAR
+      CLICKED: 
+        AMPLIFIER: 1
+        ENABLED: true
+        ENERGY: 40
+        COOLDOWN: 10
+      HELD:
+        AMPLIFIER: 0
+        ENABLED: true
+        ENERGY: 5
+        
+    FIRE_RESISTANCE:
+      TYPE: MAGMA_CREAM
+      CLICKED: 
+        AMPLIFIER: 1
+        ENABLED: true
+        ENERGY: 20
+        COOLDOWN: 10
+      HELD:
+        AMPLIFIER: 0
+        ENABLED: true
+        ENERGY: 5
+
+    INVISIBILITY:
+      TYPE: EMERALD
+      CLICKED: 
+        AMPLIFIER: 1
+        ENABLED: false
+        ENERGY: 40
+        COOLDOWN: 10
+      HELD:
+        AMPLIFIER: 0
+        ENABLED: false
+        ENERGY: 5
+        
+    FOOD:
+      TYPE: WHEAT
+      CLICKED: 
+        ENABLED: true
+        ENERGY: 30
+        COOLDOWN: 10
+      HELD:
+        ENABLED: false
+        ENERGY: 5
+
+  EFFECTS: # Set the effect name and amplifiers here
+    SPEED: 1
+    JUMP: 1
+    REGENERATION: 1
+  
+ROGUE:
+  ENABLED: true
+  
+  ARMOR:
+    BOOTS: CHAINMAIL_BOOTS
+    LEGGINGS: CHAINMAIL_LEGGINGS
+    CHESTPLATE: CHAINMAIL_CHESTPLATE
+    HELMET: CHAINMAIL_HELMET
+  
+  SWORD_TYPE: DIAMOND_SWORD
+  SWORD_DAMAGE: 4
+  BREAK_SWORD: true
+  
+  SPEED_BOOST:
+    ENABLED: true
+    AMPLIFIER: 6
+    DURATION: 15
+    COOLDOWN: 30
+    
+  JUMP_BOOST:
+    ENABLED: true
+    AMPLIFIER: 2
+    DURATION: 15
+    COOLDOWN: 30
+
+  EFFECTS: # Set the effect name and amplifiers here
+    SPEED: 2
+  
+MINER:
+  ENABLED: true
+  
+  ARMOR:
+    BOOTS: IRON_BOOTS
+    LEGGINGS: IRON_LEGGINGS
+    CHESTPLATE: IRON_CHESTPLATE
+    HELMET: IRON_HELMET
+  
+  INVISIBILITY: 
+    ENABLED: true
+    BELOW_BLOCK: 16 # Set to 255 to be enabled all time
+
+  EFFECTS: # Set the effect name and amplifiers here
+    FAST_DIGGING: 1
+    
+#################################################################
+#                                                               #
+#                   Forced Team Hook Section                    #
+#                                                               #
+#  Only use this section if you have multiple team plugins on   #
+#                   the supported plugin list                   #
+#                                                               #
+#################################################################    
+
+TOWNY_USE_NATIONS: false # Set this to true to enable nations instead of towns
+MCMMO_USE_PARTIES: false # Set this to true to enable McMMO parties
+
+# Please type the plugin name you want to force hook
+
+FORCED_HOOK:
+  ENABLED: false
+  PLUGIN: ''  
+    
