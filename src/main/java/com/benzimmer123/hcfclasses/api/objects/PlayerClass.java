@@ -71,6 +71,22 @@ public interface PlayerClass {
 	int getActivationLength();
 
 	/**
+	 * Set the time stamp of when the player can next use a rogue sword
+	 *
+	 * @param long nextRogueAttack
+	 * 
+	 */
+	void setNextRogueAttack(long nextRogueAttack);
+
+	/**
+	 * Get the time stamp when the player can next use a rogue sword
+	 *
+	 * @return long
+	 * 
+	 */
+	long getNextRogueAttack();
+
+	/**
 	 * Get the time remaining in seconds until activation
 	 *
 	 * @return int
