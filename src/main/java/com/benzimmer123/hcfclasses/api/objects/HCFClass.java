@@ -102,6 +102,31 @@ public interface HCFClass {
 	List<ClickableItem> getClickableItems();
 
 	/**
+	 * Get all HeldItems stored in this hcfclass
+	 *
+	 * @return List of HeldItems
+	 * 
+	 */
+	List<HeldItem> getHeldItems();
+
+	/**
+	 * Add a new HeldItem to this hcfclass
+	 *
+	 * @param ItemStack item
+	 * @param String potionEffectType
+	 * @param int duration
+	 * @param int cooldownDelay
+	 * @param int potionEffectAmp
+	 * 
+	 */
+	void addHeldItem(ItemStack item, String potionEffectType, int duration, int cooldownDelay, int potionEffectAmp);
+
+	/**
+	 * Remove all HeldItems stored in this hcfclass
+	 */
+	void clearHeldItems();
+
+	/**
 	 * Serialize hcfclass to file
 	 */
 	public void save();
